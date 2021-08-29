@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+
+<body>
+    <pre>
+		var arr = [1, 42, 65, 46, 28, 65, 53, 1, 32, 7, 65, 46, 1, 53, 6, 46, 65, 32, 28, 39, 65, 32, 1, 23, 65, 32, 39, 65, 46, 53, 46, 53, 65, 32, 53, 28, 65, 1, 53, 65, 23, 32, 7, 65, 32, 46, 6, 1, 53, 46, 7, 53, 9, 23, 46, 7, 53, 6, 1, 65, 28, 7, 28, 32, 65, 23, 46, 7, 53, 9]
+		1、将数组重复的数字去除
+		2、求出现频率最高的十个数字
+		3、将其打印至有序列表result中
+	</pre>
+    <ol id="result">
+    </ol>
+    <script type="text/javascript">
+    window.onload = function() {
+        var arr = [1, 42, 65, 46, 28, 65, 53, 1, 32, 7, 65, 46, 1, 53, 6, 46, 65, 32, 28, 39, 65, 32, 1, 23, 65, 32, 39, 65, 46, 53, 46, 53, 65, 32, 53, 28, 65, 1, 53, 65, 23, 32, 7, 65, 32, 46, 6, 1, 53, 46, 7, 53, 9, 23, 46, 7, 53, 6, 1, 65, 28, 7, 28, 32, 65, 23, 46, 7, 53, 9];
+        // 频率
+        var obj = {};
+        // 去重之后的数组
+        var pureArray = [];
+        arr.forEach(function(item, index) {
+            if (obj[item]) {
+                // 在obj中存在
+                obj[item] = obj[item] + 1;
+            } else {
+                // 在obj中不存在
+                obj[item] = 1;
+                pureArray.push(item);
+            }
+        });
+        console.log(obj);
+        console.log(pureArray);
+    }
+    </script>
+</body>
+
+</html>
